@@ -92,7 +92,6 @@
 - prefer enums over plain Strings for finite, well-defined values
 - reuse enum constants as values if possible; enum constants do not have to follow naming conventions
 - prefer try-with-resources over explicitly closing resources
-- use lines with rounded (not curved) style in draw.io diagrams
 
 ## Simplicity Principles
 - keep the design KISS and YAGNI
@@ -168,7 +167,7 @@
 - Maven pom.xml must not be created for Java 25 CLI applications
 - Java 25 CLI applications will be executed in source-file mode
 - never use quarkus-hibernate-validator
-- create metrics and observability features with OTEL
+- create metrics and observability features with OTEL / opentelemetry
 
 ## Unnamed Classes
 - in unnamed classes do not import packages available in java.base module

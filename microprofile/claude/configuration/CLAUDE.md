@@ -1,5 +1,6 @@
 ## Java Version & Syntax
 - use Java 25 with modern syntax (var, pattern matching, records, text blocks)
+- prefer dependencies in this order: Java SE, MicroProfile, Jakarta EE
 - use Java SE APIs over writing custom code
 - prefer unchecked over checked exceptions; never throw generic exceptions like java.lang.Exception
 - throw RuntimeException subclasses, not directly; inherit from WebApplicationException in JAX-RS projects

@@ -20,18 +20,48 @@ Static web pages without external dependencies or build systems. Only W3C and WH
 
 ## CSS Standards (W3C)
 - no CSS frameworks, preprocessors, or build tools
-- use CSS custom properties (variables) for theming and reusable values
-- prefer CSS Grid for two-dimensional layouts
+- maintain styles in dedicated `.css` files; no inline styles
+
+### Custom Properties & Cascade
+- use CSS custom properties for theming, spacing, and reusable values
+- use `@layer` to manage cascade priority: `@layer reset, base, components, utilities`
+- use `@scope` for component-scoped styles without class naming conventions
+
+### Layout
+- prefer CSS Grid for two-dimensional layouts; use `subgrid` for nested grid alignment
 - prefer Flexbox for one-dimensional layouts
-- use container queries (`@container`) for component-responsive design
-- use `:has()` selector for parent-based styling
+- use `gap` instead of margin hacks for spacing
+
+### Selectors
 - use CSS nesting for related selectors
-- responsive design: prefer container queries over media queries for components; use media queries for page-level layout
+- use `:has()` for parent-based and previous-sibling styling
+- use `:is()` to group selectors and reduce specificity
+- use `:where()` for zero-specificity selector grouping
+
+### Responsive Design
+- prefer container queries (`@container`) over media queries for components
+- use media queries for page-level layout only
+- use `clamp()` for fluid typography and spacing: `font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem)`
+
+### Colors
+- use `oklch()` or `oklab()` for perceptually uniform colors
+- use `color-mix()` for color variations: `color-mix(in oklch, var(--primary) 80%, white)`
+- use `light-dark()` with `color-scheme` for theme-aware colors
+
+### Units & Sizing
 - use logical properties (`inline-start`, `block-end`) over physical properties (`left`, `bottom`)
 - prefer `rem` and `em` over `px` for accessibility
-- use `prefers-color-scheme` and `prefers-reduced-motion` for user preferences
-- maintain styles in dedicated `.css` files; no inline styles
-- use `:valid`, `:invalid`, `:required`, `:optional` for form styling
+- use `dvh`, `svh`, `lvh` for viewport-relative heights on mobile
+
+### User Preferences
+- use `prefers-color-scheme` for light/dark themes
+- use `prefers-reduced-motion` to disable animations
+- use `prefers-contrast` for high-contrast adjustments
+
+### Forms & Interactivity
+- use `:valid`, `:invalid`, `:required`, `:optional`, `:user-valid`, `:user-invalid` for form styling
+- use `accent-color` to theme native form controls
+- use `scroll-snap-type` and `scroll-snap-align` for scroll snapping
 
 ## Accessibility (WCAG 2.2)
 - the first rule of ARIA: do not use ARIA if a native HTML element provides the semantics

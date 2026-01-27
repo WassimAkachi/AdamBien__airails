@@ -28,18 +28,32 @@ Build modern, performant static websites using web standards, semantic markup, a
 ```
 project/
 ├── index.html          # Entry point
-├── styles/
-│   ├── main.css       # Global styles
-│   ├── components.css # Component-specific styles
-│   └── utilities.css  # Utility classes
-├── assets/
-│   ├── images/
-│   ├── fonts/
-│   └── icons/
-└── pages/             # Additional HTML pages
-    ├── about.html
-    └── contact.html
+├── about.html          # Additional pages
+├── contact.html
+├── css/                # or styles/
+│   ├── main.css
+│   ├── components.css
+│   └── utilities.css
+├── images/             # or img/
+│   ├── logo.svg
+│   └── hero.jpg
+├── fonts/
+│   └── custom-font.woff2
+└── icons/
+    └── favicon.ico
 ```
+
+Alternative flat structure for smaller sites:
+```
+project/
+├── index.html
+├── about.html
+├── style.css           # Single stylesheet
+└── images/
+    └── photo.jpg
+```
+
+Note: Directory naming conventions vary. Common alternatives include `styles/` vs `css/`, `images/` vs `img/`, or grouping all static files under `assets/` or `static/`. Choose what works best for your project and stay consistent.
 
 ## HTML Best Practices
 

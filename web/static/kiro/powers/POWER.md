@@ -136,6 +136,106 @@ Use semantic HTML5 elements to convey document structure and meaning:
 </form>
 ```
 
+### Form Control Styling
+
+Native form controls can be customized with CSS. Use `appearance: none` to remove default browser styling:
+
+```css
+/* Custom text input */
+input[type="text"],
+input[type="email"],
+textarea {
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font: inherit;
+  inline-size: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+/* Custom checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,..."); /* checkmark icon */
+}
+
+/* Custom radio button */
+input[type="radio"] {
+  appearance: none;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--color-primary);
+  background: radial-gradient(var(--color-primary) 40%, transparent 45%);
+}
+
+/* Custom select box */
+select {
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  font: inherit;
+  background-color: white;
+  background-image: url("data:image/svg+xml,..."); /* dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  cursor: pointer;
+}
+
+/* Custom button */
+button {
+  appearance: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+```
+
+Note: Always maintain visible focus indicators for accessibility. The `accent-color` property provides simpler theming for checkboxes, radios, and range inputs without removing native styling:
+
+```css
+:root {
+  accent-color: var(--color-primary);
+}
+```
+
 ### Accessibility Requirements
 
 - Always include `lang` attribute on `<html>`

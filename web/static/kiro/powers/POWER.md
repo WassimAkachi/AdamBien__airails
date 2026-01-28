@@ -2,7 +2,8 @@
 name: Static Web Development
 description: Build modern static websites using semantic HTML and CSS without external dependencies or build systems
 keywords: html, css, semantic markup, web standards, static sites, baseline 2025, accessibility, responsive design, no javascript
-version: 1.0.0
+version: 0.0.1
+author: adam-bien.com
 ---
 
 # Static Web Development Power
@@ -283,6 +284,78 @@ body {
   --color-primary: oklch(60% 0.15 250);
   --color-primary-light: oklch(from var(--color-primary) calc(l + 0.2) c h);
   --color-primary-dark: oklch(from var(--color-primary) calc(l - 0.2) c h);
+}
+```
+
+### Transitions and Animations
+
+CSS transitions provide smooth visual feedback for state changes without JavaScript.
+
+**Basic Transitions**:
+```css
+.button {
+  background-color: var(--color-primary);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Multiple properties */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Shorthand for all properties */
+.link {
+  transition: all 0.15s ease-in-out;
+}
+```
+
+**CSS Animations**:
+```css
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Continuous animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+```
+
+**Respect User Preferences**:
+```css
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 ```
 

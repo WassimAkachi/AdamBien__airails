@@ -9,7 +9,7 @@ Create or maintain a Java 25 CLI application using $ARGUMENTS. Apply all rules b
 
 - Use Java 25 source-file mode — no build tool required
 - If necessary, use https://github.com/AdamBien/zb to create executable JARs
-- Prefer creating executable files without the `.java` extension, with a lowercase filename and a shebang:
+- Never use the `.java` extension — always create executable files with a lowercase filename and a shebang:
 
 ```
 #!/usr/bin/env -S java --source 25

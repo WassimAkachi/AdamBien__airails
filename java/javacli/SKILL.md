@@ -46,9 +46,10 @@ java ${BASEDIR}/[SCRIPT_NAME] "$@"
 
 - If App.VERSION exists, increase the last number after successful unit tests
 
-## Main Method Interface Conventions
+## Main Method Conventions
 
-- Create / maintain executable interfaces with main method directly in the "application" package e.g. ("airhacks.App")
+- Main method signature: `void main()` if args are not needed, otherwise `void main(String... args)` (instance main — not static)
+
 
 ## Unnamed Classes
 

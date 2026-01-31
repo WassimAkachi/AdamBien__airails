@@ -47,7 +47,6 @@ java ${BASEDIR}/SCRIPT_NAME "$@"
 - Use `var` for local variable declarations where the type is obvious
 - Use modern Java features (records, sealed types, pattern matching, etc.) naturally
 - No package declaration
-- Nested types (records, enums, interfaces) go inside the `interface App` block
 - Do not import packages from `java.base` — it is automatically available
 - Always use module imports (e.g., `import module java.net.http;`) — never individual type imports
 - Minimal imports — only import what is actually used

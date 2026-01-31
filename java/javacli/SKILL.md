@@ -20,7 +20,7 @@ Create or maintain a Java 25 CLI application using $ARGUMENTS. Apply all rules b
 #!/usr/bin/env -S java --source 25
 ```
 
-  The shebang (`#!`) tells the OS to use `java` as the interpreter. The `env -S` flag allows passing multiple arguments and locates `java` via `PATH`, making the script portable. The file must have no `.java` extension and use a lowercase name. Mark it executable with `chmod +x`.
+  The shebang line tells the OS to use java as the interpreter. The "env -S" flag allows passing multiple arguments and locates java via PATH, making the script portable. The file must have no .java extension and use a lowercase name. Mark it executable with chmod +x.
 
 - Prefer creating executable Java files without the `.java` extension, with a lowercase filename and a shebang:
 

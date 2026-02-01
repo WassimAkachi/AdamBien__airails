@@ -1,6 +1,6 @@
 # microprofile-server
 
-A Claude Code skill defining architecture and coding rules for long-running Java MicroProfile / Jakarta EE server applications / microservices.
+An [AIrails.dev](https://airails.dev) skill defining architecture and coding rules for long-running Java MicroProfile / Jakarta EE server applications / microservices.
 
 ## Scope
 
@@ -9,6 +9,7 @@ A Claude Code skill defining architecture and coding rules for long-running Java
 - Testing conventions: unit, integration, and system tests
 - Maven project structure
 - Java 25 with modern syntax
+- Minimal dependencies (Java SE → MicroProfile → Jakarta EE)
 
 
 Not intended for serverless deployments.

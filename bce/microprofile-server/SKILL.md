@@ -1,6 +1,6 @@
 ---
 name: microprofile-server
-description: Architecture and coding rules for long-running Java MicroProfile / Jakarta EE server applications — BCE layering, JAX-RS resources, CDI, JSON-P, testing (unit/integration/system), and Maven project structure. Use when creating, writing, or reviewing code in MicroProfile server projects. Not for serverless deployments.
+description: Architecture and coding rules for long-running Java MicroProfile / Jakarta EE server applications — BCE layering, business components (BC), JAX-RS resources, CDI, JSON-P, testing (unit/integration/system), and Maven project structure. Use when creating, generating, scaffolding, writing, or reviewing code, resources, entities, boundaries, or business components in MicroProfile server projects. Not for serverless deployments.
 ---
 
 ## Java Version & Syntax

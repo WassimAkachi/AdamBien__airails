@@ -1,7 +1,6 @@
 ---
 name: web-static
 description: Build modern static websites using semantic HTML and CSS without external dependencies or build systems
-argument-hint: "[description of the website or page to build]"
 ---
 
 Build or maintain a static website using $ARGUMENTS. Apply all rules below strictly.

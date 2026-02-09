@@ -53,3 +53,4 @@ java ${BASEDIR}/SCRIPT_NAME "$@"
 - Always use module imports (e.g., `import module java.net.http;`) — never individual type imports
 - Minimal imports — only import what is actually used
 - No blank lines between imports
+- Prefer character literals and named constants over raw numeric literals — write `'\n'` not `10`, define `int ESC = '\033'` instead of inlining `27`

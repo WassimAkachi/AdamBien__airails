@@ -57,3 +57,4 @@ java ${BASEDIR}/SCRIPT_NAME "$@"
 - Bind behavior to data with functional fields — store a `Runnable`, `Consumer`, or lambda in a record instead of switching on type externally (e.g., `record Action(String name, Runnable run)` then call `action.run()`)
 - Extract complex boolean conditions into named predicate methods — write `boolean isEligible()` instead of inlining `age >= 18 && status.equals("active") && !banned`
 - Extract non-trivial calculations into named methods — write `double shippingCost()` instead of inlining the formula, so call sites read as intent rather than arithmetic
+- Inline single-use variables — if a variable is assigned and used only once on the next line, pass the expression directly instead

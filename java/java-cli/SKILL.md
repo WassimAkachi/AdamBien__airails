@@ -40,6 +40,7 @@ java ${BASEDIR}/SCRIPT_NAME "$@"
 
 ## Code Style
 
+- Do not create classes or interfaces — use unnamed classes with top-level methods, records, enums, and sealed types only
 - Code must be as simple, elegant, and understandable as possible
 - Always choose the simplest possible API — prefer higher-level, concise APIs over verbose low-level ones
 - When multiple approaches exist, use the one with the fewest lines of code
@@ -51,3 +52,9 @@ java ${BASEDIR}/SCRIPT_NAME "$@"
 - Always use module imports (e.g., `import module java.net.http;`) — never individual type imports
 - Minimal imports — only import what is actually used
 - No blank lines between imports
+- Prefer character literals and named constants over raw numeric literals — write `'\n'` not `10`, define `int ESC = '\033'` instead of inlining `27`
+- Bind behavior to data with functional fields — store a `Runnable`, `Consumer`, or lambda in a record instead of switching on type externally (e.g., `record Action(String name, Runnable run)` then call `action.run()`)
+- Extract complex boolean conditions into named predicate methods — write `boolean isEligible()` instead of inlining `age >= 18 && status.equals("active") && !banned`
+- Extract non-trivial calculations into named methods — write `double shippingCost()` instead of inlining the formula, so call sites read as intent rather than arithmetic
+- Inline single-use variables — if a variable is assigned and used only once on the next line, pass the expression directly instead
+- Extract repeated string literals into named constants — if the same string appears more than once, define a `String` constant so changes happen in one place
